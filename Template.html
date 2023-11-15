@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
+        // possible problems may occur...
+        import { getDatabase } from "firebase/database";
+        const database = getDatabase();
+        
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyD6qorJ8M7maeAlpVelq88i6yo2cCIUMik",
+          authDomain: "schoolapp-b5173.firebaseapp.com",
+          projectId: "schoolapp-b5173",
+          storageBucket: "schoolapp-b5173.appspot.com",
+          messagingSenderId: "774372551707",
+          appId: "1:774372551707:web:e77278f90b0acaa5495cbe",
+          measurementId: "G-NB8S4WPZRX"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

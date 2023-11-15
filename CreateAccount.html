@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Template.html"> <!--importing firebase-->
+        <title>Create Account</title>
+        <link rel="stylesheet" href="Styles.css">
+
+        <script type="module">
+            import {getDatabase, ref, set} from "/firebase/database";
+
+            //make sure to call this somewhere
+            function writeUserData(userId, name, email, password)
+            {
+                const db = getDatabase();
+                set(ref(db, '/userID' + userId), {
+                "email": email,
+                "password": password
+                });
+            }
+
+            function registerUser() {
+            // Get email and password from the form
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Get a reference to the 'users' node in the database
+            const usersRef = database.ref('userID');
+
+            // Push user data to the database
+            usersRef.push({
+                "email": email,
+                "password": password,
+            })
+        }
+        </script>
+
+    </head>
+    <body>
+        <h1 style="text-align: center;">Welcome to the Create Account page!</h1>
+
+        <div class="parent">
+            <div> 
+                <!--put the div's within the form-->
+                <form id="signup-form">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                
+                    <button type="submit">Sign Up</button>
+                  </form>
+                <input class="textInput" type="text" id="name" placeholder="Enter name">
+            </div>
+            <div class="child">
+                <input class="textInput" type="text" id="email" placeholder="Enter email">
+            </div>
+            <div>
+                <input class="textInput" type="text" id="password" placeholder="Enter password">
+            </div>
+            <div class="child">
+                <input class="textInput" type="text" id="confirmPassword" placeholder="Confirm password">
+            </div>
+            <div class="child">
+                <a href="Home.html" onClick="registerUser()" class="centered-button">Create an Account</a>
+
+            </div>
+        </div>
+    </body>
+</html>
